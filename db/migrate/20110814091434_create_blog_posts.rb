@@ -1,7 +1,7 @@
 class CreateBlogPosts < ActiveRecord::Migration
   def change
     create_table :blog_posts do |t|
-      t.string :title, null: false
+      t.string :title, null: false, length: 250
       t.text :body, null: false
       t.references :blogger, polymorphic: true
       t.integer :comments_count, default: 0, null: false
