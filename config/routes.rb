@@ -8,5 +8,7 @@ Blogit::Engine.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
 
+  get "/feed" => "posts#feed"
   get "/" => "posts#index", as: :blog_root
+  get '/:id' => 'posts#show', as: :blog_post
 end
